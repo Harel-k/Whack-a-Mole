@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Whack-a-Mole</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/1695/1695590.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <div class="score-container">
+            <h2>Your score:</h2>
+            <h2 id="score">0</h2>
+
+            <h2>High Score:</h2>
+            <h2 id="high-score">0</h2>
+
+            <h2>Time Left:</h2>
+            <h2 id="time-left">45</h2>
+        </div>
+
+        <div class="grid">
+            <div class="square" id="1"></div>
+            <div class="square" id="2"></div>
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+            <div class="square" id="6"></div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+            <div class="square" id="9"></div>
+        </div>
+
+        <div class="button-container">
+            <button id="stop-button">Stop</button>
+            <button id="continue-button">Continue</button>
+            <button id="reset-btn" onclick="reset()">Reset</button>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

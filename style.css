@@ -1,0 +1,150 @@
+/* Game Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body::-webkit-scrollbar {
+    appearance: none;
+    scroll-behavior: smooth;
+}
+
+.grid {
+    width: 50vmin; /* Scale grid to fit within viewport */
+    height: 50vmin; /* Keep square ratio */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns */
+    grid-template-rows: repeat(3, 1fr);    /* Ensures 3 rows */
+    gap: 10px; /* Add some space between squares */
+    cursor: url('https://cdn-icons-png.flaticon.com/128/10355/10355177.png'), auto; /* Hammer cursor */
+    
+}
+
+.square {
+    height: 16vmin; /* Scale squares dynamically */
+    width: 16vmin; /* Scale squares dynamically */
+    border: solid black 1.26px;
+    border-radius: 4px; /* Rounded corners */
+    background-color: #ffffff; /* Light grey background */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    cursor: url('https://cdn-icons-png.flaticon.com/128/10355/10355177.png'), auto; /* Hammer cursor */
+}
+
+.square:hover {
+    background-color: #f4f4f4; /* Slightly darker grey on hover */
+}
+
+.mole {
+    background-image: url("mole.jpg");
+    background-size: cover;
+    cursor: url('https://cdn-icons-png.flaticon.com/128/10355/10355177.png'), auto; /* Hammer cursor */
+}
+
+button {
+    width: 120px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+}
+
+#enter-leaderboard{
+    height: 53px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    cursor: pointer;
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+#continue-button {
+    display: none; /* Hide the continue button initially */
+}
+
+button.clicked {
+    animation: buttonClick 0.3s; /* Animation for button click */
+}
+
+@keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.score-container, .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Add some space between elements */
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Add some space between the grid and the side containers */
+}
+
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Add some space between elements */
+}
+
+#leaderboard {
+    list-style-type: none;
+    padding: 0;
+}
+
+#leaderboard li {
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .grid {
+        width: 80vw;  /* Scale grid to 80% of screen width */
+        height: 80vw; /* Keep square ratio */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+        grid-template-rows: repeat(3, 1fr); /* Always 3 rows */
+        gap: 5px; /* Reduce space between squares on mobile */
+    }
+
+    .square {
+        width: 25vw; /* Scale squares dynamically */
+        height: 25vw;
+    }
+
+    .main-container {
+        flex-direction: column; /* Stack elements vertically on mobile */
+        gap: 10px; /* Reduce gap between elements */
+    }
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Add some space between elements */
+}
